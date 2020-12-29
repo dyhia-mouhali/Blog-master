@@ -28,7 +28,7 @@ class UserFixtures extends Fixture
                          $user,
                          'HjKLM'
                      ))
-            ->setEmail("kaloun.anis@gmail.com")
+            ->setEmail("nom.prenom@gmail.com")
             ->setRoles($roles);
         $manager->persist($user);
 
