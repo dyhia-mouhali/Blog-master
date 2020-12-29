@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block body  %}
+
+    <div style="background-color: #f8f6f2; padding: 15%">
+        <a href="/?page=1" style="list-style-type: none; color: black; margin-bottom: 20px ">   <img src="{{ asset("ressources/return-ConvertImage.png") }}"  alt="retour"/> retour a l'accueil</a>
+        <div style=" background-color: #ffffff; font-family: Gotham!important; color: #333!important; ">
+
+    <header style="padding-top: 25px;">
+        <p style=" font-family: Merriweather,Georgia,Serif; font-size: 25px; font-weight: 300; line-height: 30px; text-align: center"><em>{{ post.title }}</em></p>
+        <p style=" font-family: Merriweather,Georgia,Serif; font-size: 20px; font-weight: 300; line-height: 25px; text-align: center"><em> Publie le :{{ post.published ? post.published|date('d-m-Y') : '' }}</em></p>
+    </header>
+
+    <article style="margin: 7%; padding-bottom: 10%">{{post.content}}</article>
+
+        </div>
+    </div>
+
+    <footer style="background-color: #444444; height: 200px;" >
+        <p style="text-align: center; padding-top: 30px">Suivez nous sur les médias sociaux</p>
+
+        <div class="resauxS" style=" text-align: center">
+            <a href="https://www.facebook.com/">   <img src="{{ asset("ressources/facebook.png") }}"  alt="Facebook"/></a>
+            <a href="https://twitter.com/">  <img src="{{ asset("ressources/twitter.png") }}"  alt="twitter"/></a>
+            <a href="https://www.instagram.com/"> <img src="{{ asset("ressources/instagram.png") }}"  alt="instagram"/></a>
+        </div>
+    </footer>
+
+{% endblock %}

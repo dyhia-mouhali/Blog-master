@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post index{% endblock %}
+
+{% block body %}
+    <div class="id" style="margin-bottom:70px; " >
+        <div style="height:350px;  background-size: cover; margin-bottom: 0px; overflow: hidden ">
+        <img src="{{ asset("ressources/ourBlog.jpg") }}"  alt="blog" style="width: 100%"/>
+        </div>
+        <div id="menu" style="background-color: #333;margin-top:0px;  position: sticky; top: 0; overflow: hidden;">
+            <ul style="list-style-type: none;margin: 0; padding: 0; overflow: hidden; background-color: #333;list-style-type: none;padding-top: 15px">
+               <li> <h1 style="color: #ffffff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; "> Post index </h1></li>
+                <li style="float: right; padding-right: 25px"><a style="text-decoration: none; color: #ffffff;" href="{{ path('post_new')}}">Create new</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+<div class="container" >
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4" style="margin-bottom: 35px;">
+
+            <div class="card border-success mb-3" style="max-width: 25rem; max-height: 30rem;">
+                <div class="card-header bg-transparent"> Titre: {{ post.title }}</div>
+                <div class="card-body text-success" style="overflow: hidden;">
+                    <h5 class="card-title">urlAlias: {{ post.urlAlias }} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">ID: {{ post.id }} et la date de publication: {{ post.published ? post.published|date('Y-m-d H:i:s') : '' }}</h6>
+                    <article  class="card-text" style=" overflow: hidden;font-family: 'Bitstream Charter',Georgia,serif; font-size:16px;line-height:1.4;color: #444;">
+                        {{ post.content }}
+                    </article>
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <a href="{{ path('post_show', {'id': post.id}) }}" class="card-link">show</a>
+                    <a style="float: right;" href="{{ path('post_edit', {'id': post.id}) }}" class="card-link">edit</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

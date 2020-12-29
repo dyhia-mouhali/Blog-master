@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Post{% endblock %}
+
+{% block body %}
+
+    <div class="id" style="margin-bottom:70px; " >
+        <div style="height:350px;  background-size: cover; margin-bottom: 0px; overflow: hidden ">
+            <img src="{{ asset("ressources/ourBlog.jpg") }}"  alt="blog" style="width: 100%"/>
+        </div>
+        <div id="menu" style="background-color: #333; margin-top:0px;  position: sticky; top: 0; overflow: hidden; opacity: 0.8;">
+            <ul style=" list-style-type: none;margin: 0; padding: 0; background-color: #333;list-style-type: none;padding-top: 15px">
+                <li> <a style="float: right; color: cornsilk;padding-left: 10px; text-shadow: 0 0 10px rgba(0,0,0,0.3); margin-right: 25px" href="{{ path('post_index') }}">back to list</a></li>
+                <li><p style="padding-left: 10px; color: cornsilk; ">Create new Post</p></li>
+            </ul>
+        </div>
+    </div>
+
+
+    {{ include('post/_form.html.twig') }}
+
+
+{% endblock %}

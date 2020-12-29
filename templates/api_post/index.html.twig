@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block body %}
+    <div style="height:150px; background-color: cornsilk; padding-top: 3%  " >
+        <h3 style="text-align: center"><em> les posts des camarades </em></h3>
+    </div>
+<div class="container"  style="margin-top: 40px">
+    <div class="row">
+        {% for post in Posts %}
+            <div class="col-md-4" style="margin-bottom: 35px;">
+                <div class="card" style="max-width: 25rem;  padding: 15px">
+                    <h5 class="card-title" style="font-family: Merriweather,Georgia,Serif; font-size: 18px; font-weight: 300; line-height: 30px;"><em>{{ post.title }}</em></h5>
+                    <article  class="card-text" style="font-family: 'Bitstream Charter',Georgia,serif; font-size:16px;line-height:1.4;color: #444;">{{post.content}}</article>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+        {% endblock %}
+
+

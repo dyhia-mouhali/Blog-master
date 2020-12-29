@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Post{% endblock %}
+
+{% block body %}
+
+<div>
+    <a href="{{ path('post_index') }}" style="list-style-type: none; color: black; margin-bottom: 20px ">   <img src="{{ asset("ressources/return-ConvertImage.png") }}"  alt="retour"/> back to list</a>
+    </div>
+
+    <h1 style="text-align: center">Edit Post</h1>
+
+    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <ul style="display : inline-flex; list-style-type: none;">
+        <li style="background-color: crimson; float: right">{{ include('post/_delete_form.html.twig') }} </li>
+
+    </ul>
+
+
+
+
+{% endblock %}

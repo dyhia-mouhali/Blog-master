@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomePage{% endblock %}
+
+
+
+{% block body %}
+    <div class="id" style="height:350px;  background-image: url('https://entrepreneurprograms20.com/wp-content/uploads/2020/01/why_are_blogs_such_a_big_deal.jpg');background-size: cover; margin-bottom: 70px">
+    </div>
+
+
+    <div class="container" >
+        <div class="row">
+    {% for post in Posts %}
+        <div class="col-md-4" style="margin-bottom: 35px;">
+        <div class="card" style="max-width: 25rem; max-height: 30rem; padding: 15px">
+        <h5 class="card-title" style="font-family: Merriweather,Georgia,Serif; font-size: 18px; font-weight: 300; line-height: 30px;"><em>{{ post.title }}</em></h5>
+        <article  class="card-text" style="overflow: hidden;font-family: 'Bitstream Charter',Georgia,serif; font-size:16px;line-height:1.4;color: #444;">{{post.content}}</article>
+        {% set foo = post.getUrlAlias() %}
+            <div class="card-footer bg-transparent "> <a style="right:10px;  position: absolute;" href="/posts/{{foo}}">Lire</a></div>
+        </div>
+         </div>
+    {% endfor %}
+
+        </div>
+
+    </div>
+   <div style="margin-bottom: 10px;  margin-left: auto; margin-right: auto; width: 6em; color: #444444">{{ knp_pagination_render(Posts) }}</div>
+
+    <footer style="background-color: #444444; height: 170px; margin-top: 30px;" >
+               <p style="text-align: center; padding-top: 30px">Suivez nous sur les médias sociaux</p>
+
+        <div class="resauxS" style=" text-align: center">
+        <a href="https://www.facebook.com/">   <img src="{{ asset("ressources/facebook.png") }}"  alt="Facebook"/></a>
+        <a href="https://twitter.com/">  <img src="{{ asset("ressources/twitter.png") }}"  alt="twitter"/></a>
+        <a href="https://www.instagram.com/"> <img src="{{ asset("ressources/instagram.png") }}"  alt="instagram"/></a>
+        </div>
+    </footer>
+{% endblock %}
+
+
